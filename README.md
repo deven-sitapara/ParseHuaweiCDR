@@ -3,7 +3,7 @@
 
 Commands to execute
 
-copy following files to destination location or /usr/local/bin
+copy following files to destination location or /usr/bin
 
 -   huawei_parser.jar
 -   huawei_parser
