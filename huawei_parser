@@ -1,0 +1,29 @@
+#!/bin/bash
+
+source=$1
+destination=$2
+
+if [ -f "$source" ]; then
+
+
+    if [ ! -f "$destination" ]; then
+
+        java -jar ./huawei_parser.jar $source $destination
+
+        echo $destination
+
+    else
+
+        echo "Destination file already exists"
+
+    fi
+
+
+
+
+else
+    echo "Source file not found"
+fi
+
+
+exit 0
