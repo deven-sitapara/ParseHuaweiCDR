@@ -358,8 +358,8 @@ public class Main {
 
                 }
 
-                System.out.println(callerNumber);
-                System.exit(0);
+                //System.out.println(callerNumber);
+                //System.exit(0);
                 //Skipping extra bytes of caller number till 46th
 
                 temp = dis.skipBytes(16-count);
