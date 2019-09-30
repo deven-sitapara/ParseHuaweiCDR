@@ -2,9 +2,6 @@ package huawei_parser;
 
 import java.io.*;
 
-//D:\ProgramFiles\JavaOpenJDK1.8.0\bin\java -Didea.launcher.port=7535 "-Didea.launcher.bin.path=C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2016.1.4\bin" -Dfile.encoding=UTF-8 -classpath "D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\charsets.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\access-bridge-64.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\cldrdata.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\dnsns.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\jaccess.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\localedata.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\nashorn.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\sunec.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\sunjce_provider.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\sunmscapi.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\sunpkcs11.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\zipfs.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\jce.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\jsse.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\management-agent.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\resources.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\rt.jar;D:\www\deven\neon\service\branches\staging\bin\ParseHuawei\out\production\ParseHuawei;C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2016.1.4\lib\idea_rt.jar" com.intellij.rt.execution.application.AppMain huawei_parser.Main D:\www\deven\neon\service\branches\staging\bin\ParseHuawei\SLHE2019090906013200137072.dat D:\www\deven\neon\service\branches\staging\bin\ParseHuawei\SLHE2019090906013200137072.csv
-
-
 public class Main {
 
     public static void main(String[] args) {
@@ -14,14 +11,12 @@ public class Main {
 
         try {
 
-           // System.out.println(fromFile);
             readText(fromFile,toFile);
 
         } catch ( Exception ex ) {
 
               //  throw EOFException("Here");
         }
-
 
         //readText("FLHE2018040311464300252754.dat");
 
