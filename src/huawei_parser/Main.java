@@ -2,18 +2,26 @@ package huawei_parser;
 
 import java.io.*;
 
-//D:\ProgramFiles\JavaOpenJDK1.8.0\bin\java -Didea.launcher.port=7534 "-Didea.launcher.bin.path=D:\ProgramFiles\JetBrains\IntelliJ IDEA Community Edition 2016.1.4\bin" -Dfile.encoding=UTF-8 -classpath "D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\charsets.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\access-bridge-64.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\cldrdata.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\dnsns.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\jaccess.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\localedata.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\nashorn.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\sunec.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\sunjce_provider.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\sunmscapi.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\sunpkcs11.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\zipfs.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\jce.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\jsse.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\management-agent.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\resources.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\rt.jar;D:\www\deven\neon\service\branches\staging\bin\ParseHuawei\huawei_parser\out\production\huawei_parser;D:\ProgramFiles\JetBrains\IntelliJ IDEA Community Edition 2016.1.4\lib\idea_rt.jar" com.intellij.rt.execution.application.AppMain huawei_parser.Main D:\www\deven\neon\service\branches\staging\bin\ParseHuawei\huawei_parser\FLHE2018040311464300252754.dat D:\www\deven\neon\service\branches\staging\bin\ParseHuawei\huawei_parser\FLHE2018040311464300252754.csv
+//D:\ProgramFiles\JavaOpenJDK1.8.0\bin\java -Didea.launcher.port=7535 "-Didea.launcher.bin.path=C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2016.1.4\bin" -Dfile.encoding=UTF-8 -classpath "D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\charsets.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\access-bridge-64.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\cldrdata.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\dnsns.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\jaccess.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\localedata.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\nashorn.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\sunec.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\sunjce_provider.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\sunmscapi.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\sunpkcs11.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\ext\zipfs.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\jce.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\jsse.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\management-agent.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\resources.jar;D:\ProgramFiles\JavaOpenJDK1.8.0\jre\lib\rt.jar;D:\www\deven\neon\service\branches\staging\bin\ParseHuawei\out\production\ParseHuawei;C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2016.1.4\lib\idea_rt.jar" com.intellij.rt.execution.application.AppMain huawei_parser.Main D:\www\deven\neon\service\branches\staging\bin\ParseHuawei\SLHE2019090906013200137072.dat D:\www\deven\neon\service\branches\staging\bin\ParseHuawei\SLHE2019090906013200137072.csv
+
 
 public class Main {
 
     public static void main(String[] args) {
 
-
-        //System.out.println(System.getProperty("user.dir"));
         String fromFile = args[0];
         String toFile = args[1];
 
-        readText(fromFile,toFile);
+        try {
+
+           // System.out.println(fromFile);
+            readText(fromFile,toFile);
+
+        } catch ( Exception ex ) {
+
+              //  throw EOFException("Here");
+        }
+
 
         //readText("FLHE2018040311464300252754.dat");
 
@@ -28,15 +36,9 @@ public class Main {
 
             String file_name1 = fromFile;
 
-            //String rootPath = System.getProperty("user.dir");
-            //String fromPath = ("D:\\www\\deven\\neon\\service\\branches\\staging\\bin\\ParseHuawei\\FLHE2018040311464300252754.dat");
-            //String toPath = ("D:\\www\\deven\\neon\\service\\branches\\staging\\bin\\ParseHuawei\\FLHE2018040311464300252754.csv");
-            //String toPath2 = ("D:\\www\\deven\\neon\\service\\branches\\staging\\bin\\ParseHuawei\\FLHE2018040311464300252754_2.csv");
 
             String fromPath = fromFile;
             String toPath = toFile;
-           // String toPath2 = ("D:\\www\\deven\\neon\\service\\branches\\staging\\bin\\ParseHuawei\\FLHE2018040311464300252754_2.csv");
-            //String toPath2 = ("");
 
             FileInputStream fis = new FileInputStream(fromPath);
             DataInputStream dis = new DataInputStream(fis);
@@ -356,7 +358,9 @@ public class Main {
 
                 }
 
-//Skipping extra bytes of caller number till 46th
+                System.out.println(callerNumber);
+                System.exit(0);
+                //Skipping extra bytes of caller number till 46th
 
                 temp = dis.skipBytes(16-count);
                 calling_party_no =callerNumber;
@@ -861,8 +865,14 @@ public class Main {
                 while(count < 20 && flag != -1)
                 {
                     count++;
+                    try{
 
-                    num = dis.readByte();
+                        num = dis.readByte();
+
+                    } catch ( EOFException ex){
+                        break;
+                    }
+
 
                     bin = decimalToBinary(num);
 
@@ -905,8 +915,16 @@ public class Main {
                     temp = dis.skipBytes(6);
                 }
                 else {
-                    end_date_time_yy_alert_1=(2000 + dis.readByte());
-                    end_date_time_yy_alert= end_date_time_yy_alert_1 + "";
+                    try {
+
+                        end_date_time_yy_alert_1=(2000 + dis.readByte());
+                        end_date_time_yy_alert= end_date_time_yy_alert_1 + "";
+
+                    }catch ( EOFException ex ){
+                        break;
+
+                    }
+
 //Reading 19th Byte
                     end_date_time_mm_alert_1 = dis.readByte();
                     end_date_time_mm_alert =end_date_time_mm_alert_1 + "";

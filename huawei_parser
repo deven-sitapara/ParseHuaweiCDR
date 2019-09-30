@@ -8,7 +8,7 @@ if [ -f "$source" ]; then
 
     if [ ! -f "$destination" ]; then
 
-        java -jar ./huawei_parser.jar $source $destination
+        java -jar /usr/bin/huawei_parser.jar $source $destination
 
         echo $destination
 
@@ -18,12 +18,8 @@ if [ -f "$source" ]; then
 
     fi
 
-
-
-
 else
     echo "Source file not found"
 fi
-
 
 exit 0
